@@ -1,0 +1,11 @@
+from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
+from chat.models import UserProfile
+
+from chat.forms import UserForm, UserProfileForm
+
+
+def index(request):
+    return(request, 'chat/index.html')

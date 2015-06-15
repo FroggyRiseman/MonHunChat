@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Chat{% endblock %}
+
+{% block body_block %}
+
+    <div class="page-header">
+        {% if user.is_authenticated %}
+            <h1><strong>Guild Chat</strong></h1>
+        {% else %}
+            <h1><strong>Welcome to MonHunChat</strong></h2>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

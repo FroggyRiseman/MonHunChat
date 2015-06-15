@@ -1,4 +1,12 @@
 .navbar-brand {
-    padding-bottom: 10px;
-    padding-left: 70px;
+    padding-left: 15%;
+}
+
+.navbar-height {
+    height: 10%;
+}
+
+.navbar-text {
+    font-size: 120%;
+    padding-right: 10%;
 }

@@ -10,3 +10,12 @@
     font-size: 120%;
     padding-right: 10%;
 }
+
+.panel-margin {
+    margin-top: 3%;
+}
+
+.panel-title {
+    text-align: center;
+    font-size: 200%;
+}

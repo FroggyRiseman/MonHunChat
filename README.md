@@ -1,2 +1,4 @@
 # MonHunChat
-Monster Hunter Chat (real-time chat application)
+Monster Hunter Chat
+
+First time building a real-time chat web application.

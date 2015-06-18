@@ -4,6 +4,8 @@
 
 {% block body_block %}
 
+    <link href="http://getbootstrap.com/examples/signin/signin.css" rel="stylesheet">
+
     <form role="form" method="post" action=".">
         {% csrf_token %}
 
@@ -26,7 +28,7 @@
                 <input class="form-control" id="id_password2" name="password2" type="password" placeholder="Enter password again" required /></p>
         </div>
 
-        <button class="btn btn-default" type="submit">Submit</button>
+        <button class="btn btn-primary button-margin" type="submit">Submit</button>
 
     </form>
 

@@ -20,13 +20,15 @@
     font-size: 200%;
 }
 
-.button-margin {
+.btn-custom {
     margin-bottom: 2%;
+    border: 1%;
 }
 
 .panel-background {
     background-image: url('../images/mhbackground.png');
+    background-size: contain;
+    background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-attachment: fixed;
 }
-

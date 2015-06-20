@@ -23,3 +23,10 @@
 .button-margin {
     margin-bottom: 2%;
 }
+
+.panel-background {
+    background-image: url('../images/mhbackground.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+

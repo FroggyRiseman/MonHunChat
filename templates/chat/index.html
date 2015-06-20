@@ -4,14 +4,18 @@
 
 {% block body_block %}
 
+  <div class="panel-background">
+
     <div class="panel-heading">
         {% if user.is_authenticated %}
-            <h1 class="panel-title"><strong>Guild Chat</strong></h1>
+            <h1 class="panel-title">Guild Chat</h1>
         {% else %}
-            <h1 class="panel-title"><strong>Welcome to MonHunChat</strong></h1>
+            <h1 class="panel-title">Welcome to MonHunChat</h1>
         {% endif %}
     </div>
-    <div class="panel-body panel-background">
+    <div class="panel-body">
     </div>
+
+  </div>
 
 {% endblock %}

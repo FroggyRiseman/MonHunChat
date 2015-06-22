@@ -9,3 +9,7 @@ def index(request):
 
 def about(request):
     return render(request, 'chat/about.html')
+
+
+def roster(request):
+    return render(request, 'chat/roster.html')

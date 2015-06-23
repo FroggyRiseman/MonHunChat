@@ -12,6 +12,13 @@
         {% endif %}
     </div>
     <div class="panel-body">
+        {% if members %}
+            <ul class="list-group">
+                {% for member in members %}
+                    <li class="list-group-item"><p>{{ member }}</p></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </div>
 
   </div>

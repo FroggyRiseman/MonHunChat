@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ userProfile.user.username }}{% endblock %}
+
+{% block body_block %}
+
+    <div class="panel-heading">
+        <h2 class="panel-title">{{ userProfile.user.username }}</h2>
+    </div>
+    <div class="panel-body">
+        {{ userProfile.description }}
+    </div>
+
+{% endblock %}

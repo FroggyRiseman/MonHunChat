@@ -45,6 +45,7 @@
                   <li><a href="{% url 'auth_logout' %}?next=/chat/">Logout</a></li>
                   <li><a href="{% url 'roster' %}">Guild Members</a></li>
                   <li><a href="{% url 'auth_password_change' %}">Change Password</a></li>
+                  <li><a href="{% url 'update_profile' %}">Update Profile</a></li>
               {% else %}
                   <li><a href="{% url 'registration_register' %}">Register Here</a></li>
                   <li><a href="{% url 'auth_login' %}">Login</a></li>

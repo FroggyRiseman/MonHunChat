@@ -33,7 +33,9 @@ def send_update_profile(request):
         if form.is_valid():
             userProfile = UserProfile.objects.get(user=request.user)
             description = form.cleaned_data['description']
+            rank = form.cleaned_data['rank']
             userProfile.description = description
+            userProfile.rank = rank
             userProfile.save()
             return redirect('/roster/profile/' + str(userProfile.id))
 

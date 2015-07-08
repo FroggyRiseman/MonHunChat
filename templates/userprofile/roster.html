@@ -11,7 +11,11 @@
         {% if members %}
             <ul class="list-group">
                 {% for member in members %}
-                <li class="list-group-item"><a href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% if member.rank == 'hr3' %}
+                    <li class="list-group-item"><a href="{% url 'profile' member.user.id %}"><font color="red">{{ member.user }}</font></a></li><br />
+                    {% else %}
+                        <li class="list-group-item"><a href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% endif %}
                 {% endfor %}
             </ul>
         {% endif %}

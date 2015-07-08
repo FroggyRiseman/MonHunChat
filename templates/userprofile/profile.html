@@ -5,7 +5,11 @@
 {% block body_block %}
 
     <div class="panel-heading">
-        <h2 class="panel-title">{{ userProfile.user.username }}</h2>
+        {% if userProfile.rank == 'hr3' %}
+            <h2 class="panel-title"><font color="red">{{ userProfile.user.username }}</font></h2>
+        {% else %}
+            <h2 class="panel-title">{{ userProfile.user.username }}</h2>
+        {% endif %}
     </div>
     <div class="panel-body">
         {{ userProfile.description }}

@@ -5,15 +5,28 @@
 {% block body_block %}
 
     <div class="panel-heading">
-        {% if userProfile.rank == 'LR' %}
-            <h2 class="panel-title low-rank">{{ userProfile.user.username }}</h2>
-        {% else %}
             <h2 class="panel-title">{{ userProfile.user.username }}</h2>
-        {% endif %}
     </div>
     <div class="panel-body">
-        {{ userProfile.description }}
-        {{ userProfile.rank }}
+        {% if userProfile.rank == 'LR' %}
+            <label>Hunter Rank:</label> Low Rank<br />
+        {% elif userprofile.rank == 'HR' %}
+            <label>Hunter Rank:</label> High Rank<br />
+        {% elif userProfile.rank == 'GR' %}
+            <label>Hunter Rank:</label> G-Rank<br />
+        {% elif userProfile.rank == 'GRP' %}
+            <label>Hunter Rank:</label> G-Rank 100-998<br />
+        {% elif userProfile.rank == 'GM' %}
+            <label>Hunter Rank:</label> G-Rank 999<br />
+        {% else %}
+            <label>Hunter Rank:</label> Rank not selected.<br/>
+        {% endif %}
+
+        <label>Bio:</label> {{ userProfile.description }}<br />
+
+        {% if user.is_authenticated %}
+            <p class="text-right"><a href="{% url 'update_profile' %}">Update Profile</a>
+        {% endif %}
     </div>
 
 {% endblock %}

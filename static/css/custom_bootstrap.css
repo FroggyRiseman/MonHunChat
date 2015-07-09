@@ -6,6 +6,10 @@ body {
     background-repeat: no-repeat;
 }
 
+.black-background {
+    background: #000000;
+}
+
 .navbar-brand {
     padding-left: 15%;
 }
@@ -45,6 +49,7 @@ body {
 .custom-background {
     background: #000000;
     opacity: 0.8;
+    color: #FFFFFF;
 }
 
 .low-rank {

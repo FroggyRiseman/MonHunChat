@@ -11,10 +11,18 @@
         {% if members %}
             <ul class="list-group">
                 {% for member in members %}
-                    {% if member.rank == 'hr3' %}
-                    <li class="list-group-item"><a href="{% url 'profile' member.user.id %}"><font color="red">{{ member.user }}</font></a></li><br />
+                    {% if member.rank == 'LR' %}
+                        <li class="list-group-item custom-background"><a class="low-rank" href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% elif member.rank == 'HR' %}
+                        <li class="list-group-item custom-background"><a class="high-rank" href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% elif member.rank == 'GR' %}
+                        <li class="list-group-item custom-background"><a class="g-rank" href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% elif member.rank == 'GRP' %}
+                        <li class="list-group-item custom-background"><a class="g-rank-plus" href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                    {% elif member.rank == 'GM' %}
+                        <li class="list-group-item custom-background"><a class="guild-master" href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
                     {% else %}
-                        <li class="list-group-item"><a href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
+                        <li class="list-group-item custom-background"><a href="{% url 'profile' member.user.id %}">{{ member.user }}</a></li><br />
                     {% endif %}
                 {% endfor %}
             </ul>

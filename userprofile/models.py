@@ -4,26 +4,18 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 
 class UserProfile(models.Model):
-    LOW_RANK_ONE = 'hr1'
-    LOW_RANK_TWO = 'hr2'
-    LOW_RANK_THREE = 'hr3'
-    HIGH_RANK_FOUR = 'hr4'
-    HIGH_RANK_FIVE = 'hr5'
-    HIGH_RANK_SIX = 'hr6'
-    HIGH_RANK_SEVEN = 'hr7'
-    G_RANK_EIGHT = 'hr8'
-    G_RANK_NINE = 'hr9'
+    LOW_RANK = 'LR'
+    HIGH_RANK = 'HR'
+    G_RANK = 'GR'
+    G_RANK_PLUS = 'GRP'
+    GUILD_MASTER = 'GM'
 
     ranks = (
-            (LOW_RANK_ONE, 'HR1'),
-            (LOW_RANK_TWO, 'HR2'),
-            (LOW_RANK_THREE, 'HR3'),
-            (HIGH_RANK_FOUR, 'HR4'),
-            (HIGH_RANK_FIVE, 'HR5'),
-            (HIGH_RANK_SIX, 'HR6'),
-            (HIGH_RANK_SEVEN, 'HR7'),
-            (G_RANK_EIGHT, 'HR8'),
-            (G_RANK_NINE, 'HR9'),
+            (LOW_RANK, 'Low Rank'),
+            (HIGH_RANK, 'High Rank'),
+            (G_RANK, 'G-Rank'),
+            (G_RANK_PLUS, 'G-Rank 100-998'),
+            (GUILD_MASTER, 'G-Rank 999'),
     )
 
     user = models.OneToOneField(User)
@@ -32,7 +24,7 @@ class UserProfile(models.Model):
     rank = models.CharField(
             max_length=3,
             choices=ranks,
-            default=LOW_RANK_ONE,
+            default=LOW_RANK,
     )
 
     def __str__(self):

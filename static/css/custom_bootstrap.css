@@ -41,3 +41,28 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.custom-background {
+    background: #000000;
+    opacity: 0.8;
+}
+
+.low-rank {
+    color: #FFFFFF;
+}
+
+.high-rank {
+    color: #FF6600;
+}
+
+.g-rank {
+    color: #FF0000;
+}
+
+.g-rank-plus {
+    color: #FF00FF;
+}
+
+.guild-master {
+    color: #00FFFF;
+}

@@ -18,7 +18,10 @@ def roster(request):
 @login_required
 def update_profile(request):
     userProfile = UserProfile.objects.get(user=request.user)
-    form = UserProfileForm(initial={'description': userProfile.description})
+    form = UserProfileForm(initial={
+        'description': userProfile.description,
+        'rank': userProfile.rank
+    })
     return render_to_response(
             'userprofile/update_profile.html',
             {'form': form},

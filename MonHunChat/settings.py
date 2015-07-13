@@ -39,12 +39,13 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
+    'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
     'chat',
     'userprofile',
     'registration',
-    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,6 +97,8 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
         STATIC_PATH,
 )
+
+SITE_ID = 1
 
 # Media files
 

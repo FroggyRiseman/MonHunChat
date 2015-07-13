@@ -20,7 +20,6 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User)
     description = models.TextField(max_length=200, null=True, blank=True)
-    picture = models.ImageField(upload_to='profile_images', blank=True)
     rank = models.CharField(
             max_length=3,
             choices=ranks,

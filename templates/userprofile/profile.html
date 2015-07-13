@@ -10,7 +10,7 @@
     <div class="panel-body">
         {% if userProfile.rank == 'LR' %}
             <label>Hunter Rank:</label> Low Rank<br />
-        {% elif userprofile.rank == 'HR' %}
+        {% elif userProfile.rank == 'HR' %}
             <label>Hunter Rank:</label> High Rank<br />
         {% elif userProfile.rank == 'GR' %}
             <label>Hunter Rank:</label> G-Rank<br />
@@ -20,6 +20,40 @@
             <label>Hunter Rank:</label> G-Rank 999<br />
         {% else %}
             <label>Hunter Rank:</label> Rank not selected.<br/>
+        {% endif %}
+
+        {% if userProfile.weapon == 'GS' %}
+            <label>Favorite Weapon:</label> Greatsword<br />
+        {% elif userProfile.weapon == 'LS' %}
+            <label>Favorite Weapon:</label> Longsword<br />
+        {% elif userProfile.weapon == 'SNS' %}
+            <label>Favorite Weapon:</label> Sword and Shield<br />
+        {% elif userProfile.weapon == 'DB' %}
+            <label>Favorite Weapon:</label> Dual Blades<br />
+        {% elif userProfile.weapon == 'HAM' %}
+            <label>Favorite Weapon:</label> Hammer<br />
+        {% elif userProfile.weapon == 'HH' %}
+            <label>Favorite Weapon:</label> Hunting Horn<br />
+        {% elif userProfile.weapon == 'LAN' %}
+            <label>Favorite Weapon:</label> Lance<br />
+        {% elif userProfile.weapon == 'GL' %}
+            <label>Favorite Weapon:</label> Gunlance<br />
+        {% elif userProfile.weapon == 'SA' %}
+            <label>Favorite Weapon:</label> Switch Axe<br />
+        {% elif userProfile.weapon == 'CA' %}
+            <label>Favorite Weapon:</label> Charge Axe<br />
+        {% elif userProfile.weapon == 'IG' %}
+            <label>Favorite Weapon:</label> Insect Glaive<br />
+        {% elif userProfile.weapon == 'TON' %}
+            <label>Favorite Weapon:</label> Tonfa<br />
+        {% elif userProfile.weapon == 'BOW' %}
+            <label>Favorite Weapon:</label> Bow<br />
+        {% elif userProfile.weapon == 'HBG' %}
+            <label>Favorite Weapon:</label> Heavy Bowgun<br />
+        {% elif userProfile.weapon == 'LBG' %}
+            <label>Favorite Weapon:</label> Light Bowgun<br />
+        {% else %}
+            <label>Favorite Weapon:</label> None<br />
         {% endif %}
 
         <label>Bio:</label> {{ userProfile.description }}<br />

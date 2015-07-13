@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.dispatch import receiver
 
 class UserProfile(models.Model):
+
     LOW_RANK = 'LR'
     HIGH_RANK = 'HR'
     G_RANK = 'GR'
@@ -18,12 +19,54 @@ class UserProfile(models.Model):
             (GUILD_MASTER, 'G-Rank 999'),
     )
 
+    GREATSWORD = 'GS'
+    LONGSWORD = 'LS'
+    SWORD_N_SHIELD = 'SNS'
+    DUAL_BLADES = 'DB'
+    HAMMER = 'HAM'
+    HUNTING_HORN = 'HH'
+    LANCE = 'LAN'
+    GUNLANCE = 'GL'
+    SWITCHAXE = 'SA'
+    CHARGE_AXE = 'CA'
+    INSECT_GLAIVE = 'IG'
+    TONFA = 'TON'
+    BOW = 'BOW'
+    HEAVY_BOWGUN = 'HBG'
+    LIGHT_BOWGUN = 'LBG'
+
+    weapons = (
+            (GREATSWORD, 'Greatsword'),
+            (LONGSWORD, 'Longsword'),
+            (SWORD_N_SHIELD, 'Sword & Shield'),
+            (DUAL_BLADES, 'Dual Blades'),
+            (HAMMER, 'Hammer'),
+            (HUNTING_HORN, 'Hunting Horn'),
+            (LANCE, 'Lance'),
+            (GUNLANCE, 'Gunlance'),
+            (SWITCHAXE, 'Switch Axe'),
+            (CHARGE_AXE, 'Charge Axe'),
+            (INSECT_GLAIVE, 'Insect Glaive'),
+            (TONFA, 'Tonfa'),
+            (BOW, 'Bow'),
+            (HEAVY_BOWGUN, 'Heavy Bowgun'),
+            (LIGHT_BOWGUN, 'Light Bowgun'),
+    )
+
+
     user = models.OneToOneField(User)
     description = models.TextField(max_length=200, null=True, blank=True)
     rank = models.CharField(
             max_length=3,
             choices=ranks,
             default=LOW_RANK,
+    )
+    weapon = models.CharField(
+            max_length=3,
+            choices=weapons,
+            blank=True,
+            null=True,
+            default=None,
     )
 
     def __str__(self):

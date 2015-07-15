@@ -8,6 +8,8 @@
             <h2 class="panel-title">{{ userProfile.user.username }}</h2>
     </div>
     <div class="panel-body">
+        <h5 class="sub-title">Guild Card</h5>
+
         {% if userProfile.rank == 'LR' %}
             <label>Hunter Rank:</label> Low Rank<br />
         {% elif userProfile.rank == 'HR' %}
@@ -62,7 +64,28 @@
             <label>Nintendo FC:</label> Can't afford a 3DS<br />
         {% endif %}
 
-        <label>Bio:</label> {{ userProfile.description }}<br />
+        {% if userProfile.nintendo_name != '' %}
+            <label>Nintendo Username:</label> {{ userProfile.nintendo_name }}<br />
+        {% endif %}
+
+        {% if userProfile.hunter_name != '' %}
+            <label>Hunter Username:</label> {{ userProfile.hunter_name }}<br />
+        {% endif %}
+
+        {% if userProfile.skype_name or userProfile.teamspeak_name != '' %}
+            <h5 class="sub-title">Other Chatting Services<h5>
+            {% if userProfile.skype_name != '' %}
+                <label>Skype Username:</label> {{ userProfile.skype_name }}<br/>
+            {% endif %}
+
+            {% if userProfile.teamspeak_name != '' %}
+                <label>TeamSpeak Username:</label> {{ userProfile.teamspeak_name }}<br />
+            {% endif %}
+        {% endif %}
+
+        <div class="text-right">
+            <label>Bio:</label> {{ userProfile.description }}<br />
+        </div>
 
         {% if user.is_authenticated %}
             {% if user.id == userProfile.user.id %}

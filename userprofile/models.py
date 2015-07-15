@@ -56,6 +56,10 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User)
     description = models.TextField(max_length=200, null=True, blank=True)
+    hunter_name = models.CharField(max_length=30, blank=True, default='')
+    nintendo_name = models.CharField(max_length=30, blank=True, default='')
+    skype_name = models.CharField(max_length=30, blank=True, default='')
+    teamspeak_name = models.CharField(max_length=30, blank=True, default='')
     friend_code = models.CharField(
             max_length=14,
             help_text="Please use the following format: <em>####-####-####</em>.",

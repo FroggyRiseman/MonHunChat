@@ -13,14 +13,22 @@
             <h2 class="panel-title">Update Your Profile</h2>
         </div>
 
-        <label>Hunter Rank:</label> {{ form.rank }}
-        <label>Favorite Weapon:</label> {{ form.weapon }}
-        <label>Nintendo FC:</label> {{ form.friend_code }}<br />
-        <label>
-            Bio:
-        </label><br />
-        {{ form.description }}
-        <br />        
+        <div class="panel-body">
+            <label>Hunter Rank:</label> {{ form.rank }}<br />
+            <label>Favorite Weapon:</label> {{ form.weapon }}<br />
+            <label>Nintendo FC:</label> {{ form.friend_code }}<br />
+            <label>Nintendo Username:</label> {{ form.nintendo_name }}<br />
+            <label>Hunter Name:</label> {{ form.hunter_name }}<br />
+            <label>Skype Username:</label> {{ form.skype_name }}<br />
+            <label>TeamSpeak Username:</label> {{ form.teamspeak_name }}<br />
+
+            <label>
+                Bio:
+            </label><br />
+            {{ form.description }}
+            <br />        
+        </div>
+
         <button class="btn btn-primary btn-custom navbar-inverse" type="sumbit">Save</button>
     </form>
 

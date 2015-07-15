@@ -65,7 +65,9 @@
         <label>Bio:</label> {{ userProfile.description }}<br />
 
         {% if user.is_authenticated %}
-            <p class="text-right"><a href="{% url 'update_profile' %}">Update Profile</a>
+            {% if user.id == userProfile.user.id %}
+                <p class="text-right"><a href="{% url 'update_profile' %}">Update Profile</a>
+            {% endif %}
         {% endif %}
     </div>
 

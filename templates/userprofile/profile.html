@@ -56,6 +56,12 @@
             <label>Favorite Weapon:</label> None<br />
         {% endif %}
 
+        {% if userProfile.friend_code != '' %}
+            <label>Nintendo FC:</label> {{ userProfile.friend_code }}<br />
+        {% else %}
+            <label>Nintendo FC:</label> Can't afford a 3DS<br />
+        {% endif %}
+
         <label>Bio:</label> {{ userProfile.description }}<br />
 
         {% if user.is_authenticated %}

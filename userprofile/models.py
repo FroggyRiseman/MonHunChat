@@ -56,6 +56,11 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(User)
     description = models.TextField(max_length=200, null=True, blank=True)
+    friend_code = models.CharField(
+            max_length=14,
+            help_text="Please use the following format: <em>####-####-####</em>.",
+            blank=True, default=''
+    )
     rank = models.CharField(
             max_length=3,
             choices=ranks,

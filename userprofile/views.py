@@ -21,7 +21,8 @@ def update_profile(request):
     form = UserProfileForm(initial={
         'description': userProfile.description,
         'rank': userProfile.rank,
-        'weapon': userProfile.weapon
+        'weapon': userProfile.weapon,
+        'friend_code': userProfile.friend_code
     })
     return render_to_response(
             'userprofile/update_profile.html',
@@ -39,9 +40,11 @@ def send_update_profile(request):
             description = form.cleaned_data['description']
             rank = form.cleaned_data['rank']
             weapon = form.cleaned_data['weapon']
+            friend_code = form.cleaned_data['friend_code']
             userProfile.description = description
             userProfile.rank = rank
             userProfile.weapon = weapon
+            userProfile.friend_code = friend_code
             userProfile.save()
             return redirect('/roster/profile/' + str(userProfile.id))
 
